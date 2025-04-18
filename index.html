@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MERN Stack Internship Application</title>
+    <link rel="shortcut icon" href="https://indomitechgroup.com/img/icon.webp" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Scroll progress bar -->
+    <div class="scroll-progress"></div>
+
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Building Your Future</div>
+    </div>
+
+    <!-- Scroll to top button -->
+    <div class="scroll-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <div class="page-container">
+        <!-- Logo Section -->
+        <div class="logo-container">
+            <div class="logo">
+                <div class="logo-circle"></div>
+                <!-- <svg class="logo-svg" viewBox="0 0 100 100">
+                    <path class="logo-path" d="M50,20 L80,40 L80,60 L50,80 L20,60 L20,40 Z" fill="none" stroke="#64ffda"
+                        stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                    <path class="logo-path-inner" d="M50,30 L70,45 L70,55 L50,70 L30,55 L30,45 Z" fill="none"
+                        stroke="#64ffda" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg> -->
+                <img class="logo-svg" src="https://indomitechgroup.com/img/icon.webp" alt="">
+            </div>
+            <div class="logo-text"><img src="./mearn.png" width="180" alt=""></div>
+            <div class="logo-text"><span>{</span> MERN <span>}</span> Stack</div>
+            <div class="logo-tagline">Internship Program 2025</div>
+        </div>
+
+        <!-- Form Container -->
+        <div class="form-container">
+            <div class="glowing-bg"></div>
+
+            <!-- Form Header -->
+            <div class="form-header">
+                <h1>Join Our Development Team</h1>
+                <p>Take the first step towards becoming a full-stack developer by applying to our internship program.
+                    We're looking for passionate individuals who want to master the MERN stack.</p>
+            </div>
+
+            <!-- Application Form -->
+            <form id="internshipForm">
+                <!-- Personal Information Section -->
+                <div class="form-section">
+                    <h3 class="section-title">Personal Information</h3>
+
+                    <div class="form-row">
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="fullName">Full Name *</label>
+                                <input type="text" class="form-control" id="fullName" placeholder="Enter your full name"
+                                    required>
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" class="form-control" id="email" placeholder="Enter your email"
+                                    required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number"
+                                    required>
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="dob">Date of Birth</label>
+                                <input type="date" class="form-control" id="dob">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Current Address</label>
+                        <input type="text" class="form-control" id="address" placeholder="Enter your current address">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="city">City</label>
+                                <input type="text" class="form-control" id="city" placeholder="City">
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="country">Country</label>
+                                <select class="form-control" id="country">
+                                    <option value="" selected disabled>Select your country</option>
+                                    <option value="us">United States</option>
+                                    <option value="ca">Canada</option>
+                                    <option value="uk">United Kingdom</option>
+                                    <option value="in">India</option>
+                                    <option value="au">Australia</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education & Experience Section -->
+                <div class="form-section">
+                    <h3 class="section-title">Education & Experience</h3>
+
+                    <div class="form-group">
+                        <label for="education">Highest Education</label>
+                        <select class="form-control" id="education">
+                            <option value="" selected disabled>Select your education level</option>
+                            <option value="high-school">High School</option>
+                            <option value="bachelors">Bachelor's Degree</option>
+                            <option value="masters">Master's Degree</option>
+                            <option value="phd">PhD</option>
+                            <option value="self-taught">Self-taught</option>
+                            <option value="bootcamp">Coding Bootcamp</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="institution">Institution/University</label>
+                        <input type="text" class="form-control" id="institution"
+                            placeholder="Enter your institution name">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Experience Level *</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="experience" value="beginner" required>
+                                <span class="radio-custom"></span>
+                                Beginner
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="experience" value="intermediate">
+                                <span class="radio-custom"></span>
+                                Intermediate
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="experience" value="advanced">
+                                <span class="radio-custom"></span>
+                                Advanced
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="field-group">
+                            <label for="yearsExperience">Years of Programming Experience</label>
+                            <span class="tooltip-icon">?</span>
+                            <span class="tooltip-text">Include all programming experience, not just MERN stack</span>
+                        </div>
+                        <div class="range-container">
+                            <span class="range-value">0</span>
+                            <input type="range" class="form-control-range" id="yearsExperience" min="0" max="10"
+                                step="0.5" value="0">
+                            <div class="range-labels">
+                                <span>0</span>
+                                <span>5</span>
+                                <span>10+</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="portfolio">Portfolio URL</label>
+                                <input type="url" class="form-control" id="portfolio"
+                                    placeholder="https://yourportfolio.com">
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="github">GitHub URL</label>
+                                <input type="url" class="form-control" id="github"
+                                    placeholder="https://github.com/yourusername">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="resume">Upload Resume/CV *</label>
+                        <input type="file" class="form-control file-input" id="resume" accept=".pdf,.doc,.docx"
+                            required>
+                    </div>
+                </div>
+
+                <!-- Skills & Preferences Section -->
+                <div class="form-section">
+                    <h3 class="section-title">Skills & Preferences</h3>
+
+                    <div class="form-group">
+                        <label>Technical Skills *</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="skills" value="mongodb">
+                                <span class="checkbox-custom"></span>
+                                MongoDB
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="skills" value="express">
+                                <span class="checkbox-custom"></span>
+                                Express.js
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="skills" value="react">
+                                <span class="checkbox-custom"></span>
+                                React.js
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="skills" value="nodejs">
+                                <span class="checkbox-custom"></span>
+                                Node.js
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="skills" value="typescript">
+                                <span class="checkbox-custom"></span>
+                                TypeScript
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="skills" value="nextjs">
+                                <span class="checkbox-custom"></span>
+                                Next.js
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="otherSkills">Other Technical Skills</label>
+                        <input type="text" class="form-control" id="otherSkills"
+                            placeholder="List other technical skills (comma separated)">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label>Rate your MongoDB knowledge</label>
+                                <div class="rating-container">
+                                    <div class="stars" data-rating-for="mongoRating">
+                                        <span class="star" data-value="1">★</span>
+                                        <span class="star" data-value="2">★</span>
+                                        <span class="star" data-value="3">★</span>
+                                        <span class="star" data-value="4">★</span>
+                                        <span class="star" data-value="5">★</span>
+                                        <input type="hidden" name="mongoRating" id="mongoRating" value="0">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label>Rate your React knowledge</label>
+                                <div class="rating-container">
+                                    <div class="stars" data-rating-for="reactRating">
+                                        <span class="star" data-value="1">★</span>
+                                        <span class="star" data-value="2">★</span>
+                                        <span class="star" data-value="3">★</span>
+                                        <span class="star" data-value="4">★</span>
+                                        <span class="star" data-value="5">★</span>
+                                        <input type="hidden" name="reactRating" id="reactRating" value="0">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="internshipType">Preferred Internship Type *</label>
+                        <select class="form-control" id="internshipType" required>
+                            <option value="" selected disabled>Choose your preference</option>
+                            <option value="remote">Remote</option>
+                            <option value="onsite">On-site</option>
+                            <option value="hybrid">Hybrid</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="availability">Availability *</label>
+                        <select class="form-control" id="availability" required>
+                            <option value="" selected disabled>Select your availability</option>
+                            <option value="fulltime">Full-time (40 hrs/week)</option>
+                            <option value="parttime">Part-time (20 hrs/week)</option>
+                            <option value="flexible">Flexible hours</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="startDate">Preferred Start Date *</label>
+                        <input type="date" class="form-control" id="startDate" required>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="toggle-label">
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="relocation">
+                                <span class="toggle-slider"></span>
+                            </label>
+                            Willing to relocate if needed
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projects & Portfolio Section -->
+                <div class="form-section">
+                    <h3 class="section-title">Projects & Portfolio</h3>
+
+                    <div class="form-group">
+                        <label for="projectDescription">Describe your most challenging project</label>
+                        <textarea class="form-control" id="projectDescription"
+                            placeholder="Tell us about a challenging project you've worked on"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="projectLink">Project Link/GitHub</label>
+                        <input type="url" class="form-control" id="projectLink" placeholder="Link to your project">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="codeSnippet">Share a code snippet you're proud of</label>
+                        <textarea class="form-control" id="codeSnippet"
+                            placeholder="Paste a code snippet you're proud of"
+                            style="font-family: 'Fira Code', monospace;"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="projectFile">Upload project screenshots or diagrams (optional)</label>
+                        <input type="file" class="form-control file-input" id="projectFile"
+                            accept=".jpg,.jpeg,.png,.pdf" multiple>
+                    </div>
+                </div>
+
+                <!-- Additional Information Section -->
+                <div class="form-section">
+                    <h3 class="section-title">Additional Information</h3>
+
+                    <div class="form-group">
+                        <label for="motivation">Why are you interested in this internship? *</label>
+                        <textarea class="form-control" id="motivation"
+                            placeholder="Tell us why you're interested in this internship" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="source">How did you hear about us?</label>
+                        <select class="form-control" id="source">
+                            <option value="" selected disabled>Select an option</option>
+                            <option value="linkedin">LinkedIn</option>
+                            <option value="indeed">Indeed</option>
+                            <option value="glassdoor">Glassdoor</option>
+                            <option value="friend">Friend/Referral</option>
+                            <option value="university">University/College</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="expectations">What do you expect to learn from this internship?</label>
+                        <textarea class="form-control" id="expectations"
+                            placeholder="Share your expectations"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="toggle-label">
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="newsletter">
+                                <span class="toggle-slider"></span>
+                            </label>
+                            Subscribe to our developer newsletter
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <span>Submit Application</span>
+                </button>
+
+                <div class="form-footer">
+                    By submitting, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="./script.js"></script>
+    <script src="./app.js"></script>
+</body>
+
+</html>
