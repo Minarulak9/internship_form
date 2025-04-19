@@ -4,7 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MERN Stack Internship Application</title>
+    <title>Launch Your Career with Indomitech's MERN Stack Internship Program</title>
+    <meta name="description"
+        content="Join Indomitech's MERN Stack Internship to gain hands-on experience in MongoDB, Express.js, React, and Node.js. Build real-world projects, receive expert mentorship, and kickstart your tech career.">
+    <meta name="keywords"
+        content="MERN Stack Internship, Web Development Internship, MongoDB, Express.js, React, Node.js, Indomitech Group, Full Stack Development, Tech Internship India">
+    <meta name="author" content="Indomitech Group">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://indomitechgroup.com/internship/mern-stack">
+    <meta property="og:title" content="Launch Your Career with Indomitech's MERN Stack Internship Program">
+    <meta property="og:description"
+        content="Join Indomitech's MERN Stack Internship to gain hands-on experience in MongoDB, Express.js, React, and Node.js. Build real-world projects, receive expert mentorship, and kickstart your tech career.">
+    <meta property="og:image" content="https://indomitechgroup.com/img/logo.png">
     <link rel="shortcut icon" href="https://indomitechgroup.com/img/icon.webp" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -12,17 +24,39 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap"
         rel="stylesheet">
-        <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=6555">
 </head>
 
 <body>
+
+    <div class="container-me">
+        <div id="submitted-container" style="display: none;">
+            <div class="submitted-message">
+                <h2>Form Already Submitted</h2>
+                <p>You have already submitted this form successfully.</p>
+            </div>
+            <button id="new-submission-btn">Start New Submission</button>
+        </div>
+    </div>
+
+    <div class="modal" id="success-modal">
+        <div class="modal-content">
+            <div class="success-icon">✓</div>
+            <h2>Thank You!</h2>
+            <p>Your application was submitted successfully.</p>
+            <button id="modal-ok-btn">OK</button>
+        </div>
+    </div>
+
+
     <!-- Scroll progress bar -->
     <div class="scroll-progress"></div>
 
     <!-- Preloader -->
     <div class="preloader">
         <div class="loading-spinner"></div>
-        <div class="loading-text">Building Your Future</div>
+        <div class="loading-text">Building Your Future With</div>
+        <div class=""><img src="./mearn.png" width="180" alt=""></div>
     </div>
 
     <!-- Scroll to top button -->
@@ -35,14 +69,9 @@
         <div class="logo-container">
             <div class="logo">
                 <div class="logo-circle"></div>
-                <!-- <svg class="logo-svg" viewBox="0 0 100 100">
-                    <path class="logo-path" d="M50,20 L80,40 L80,60 L50,80 L20,60 L20,40 Z" fill="none" stroke="#64ffda"
-                        stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-                    <path class="logo-path-inner" d="M50,30 L70,45 L70,55 L50,70 L30,55 L30,45 Z" fill="none"
-                        stroke="#64ffda" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                </svg> -->
                 <img class="logo-svg" src="https://indomitechgroup.com/img/icon.webp" alt="">
             </div>
+            <h5 class="logo-text text-sm">INDOMITECH GROUP</h5>
             <div class="logo-text"><img src="./mearn.png" width="180" alt=""></div>
             <div class="logo-text"><span>{</span> MERN <span>}</span> Stack</div>
             <div class="logo-tagline">Internship Program 2025</div>
@@ -68,14 +97,14 @@
                     <div class="form-row">
                         <div class="form-col">
                             <div class="form-group">
-                                <label for="fullName">Full Name *</label>
+                                <label for="fullName">Full Name <span class="important">*</span></label>
                                 <input type="text" class="form-control" id="fullName" placeholder="Enter your full name"
                                     required>
                             </div>
                         </div>
                         <div class="form-col">
                             <div class="form-group">
-                                <label for="email">Email Address *</label>
+                                <label for="email">Email Address <span class="important">*</span></label>
                                 <input type="email" class="form-control" id="email" placeholder="Enter your email"
                                     required>
                             </div>
@@ -85,7 +114,7 @@
                     <div class="form-row">
                         <div class="form-col">
                             <div class="form-group">
-                                <label for="phone">Phone Number *</label>
+                                <label for="phone">Phone Number <span class="important">*</span></label>
                                 <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number"
                                     required>
                             </div>
@@ -151,7 +180,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label>Experience Level *</label>
+                        <label>Experience Level <span class="important">*</span></label>
                         <div class="radio-group">
                             <label class="radio-label">
                                 <input type="radio" name="experience" value="beginner" required>
@@ -179,12 +208,12 @@
                         </div>
                         <div class="range-container">
                             <span class="range-value">0</span>
-                            <input type="range" class="form-control-range" id="yearsExperience" min="0" max="10"
+                            <input type="range" class="form-control-range" id="yearsExperience" min="0" max="6"
                                 step="0.5" value="0">
                             <div class="range-labels">
                                 <span>0</span>
-                                <span>5</span>
-                                <span>10+</span>
+                                <span>3</span>
+                                <span>6+</span>
                             </div>
                         </div>
                     </div>
@@ -207,7 +236,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="resume">Upload Resume/CV *</label>
+                        <label for="resume">Upload Resume/CV <span class="important">*</span></label>
                         <input type="file" class="form-control file-input" id="resume" accept=".pdf,.doc,.docx"
                             required>
                     </div>
@@ -218,8 +247,19 @@
                     <h3 class="section-title">Skills & Preferences</h3>
 
                     <div class="form-group">
-                        <label>Technical Skills *</label>
+                        <label>Technical Skills <span class="important">*</span></label>
                         <div class="checkbox-group">
+                            <!-- Core MERN Stack -->
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="skills" value="javascript">
+                                <span class="checkbox-custom"></span>
+                                JavaScript
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="skills" value="typescript">
+                                <span class="checkbox-custom"></span>
+                                TypeScript
+                            </label>
                             <label class="checkbox-label">
                                 <input type="checkbox" name="skills" value="mongodb">
                                 <span class="checkbox-custom"></span>
@@ -241,25 +281,59 @@
                                 Node.js
                             </label>
                             <label class="checkbox-label">
-                                <input type="checkbox" name="skills" value="typescript">
-                                <span class="checkbox-custom"></span>
-                                TypeScript
-                            </label>
-                            <label class="checkbox-label">
                                 <input type="checkbox" name="skills" value="nextjs">
                                 <span class="checkbox-custom"></span>
                                 Next.js
                             </label>
+
+                            <!-- State Management & Styling -->
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="skills" value="redux">
+                                <span class="checkbox-custom"></span>
+                                Redux
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="skills" value="tailwind">
+                                <span class="checkbox-custom"></span>
+                                Tailwind CSS
+                            </label>
+
+                            <!-- Backend Tools -->
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="skills" value="mongoose">
+                                <span class="checkbox-custom"></span>
+                                Mongoose
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="skills" value="authentication">
+                                <span class="checkbox-custom"></span>
+                                Authentication
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="skills" value="git">
+                                <span class="checkbox-custom"></span>
+                                Git & GitHub
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="skills" value="postman">
+                                <span class="checkbox-custom"></span>
+                                Postman
+                            </label>
+
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="otherSkills">Other Technical Skills</label>
-                        <input type="text" class="form-control" id="otherSkills"
-                            placeholder="List other technical skills (comma separated)">
+                        <div class="pill-wrapper form-control" id="pillWrapper">
+                            <input type="text" id="pillInput" placeholder="Type and press comma or Enter" />
+                        </div>
+                        <input type="hidden" name="otherSkills" id="otherSkills" />
                     </div>
 
-                    <div class="form-row">
+
+
+                    <!-- <div class="form-row">
                         <div class="form-col">
                             <div class="form-group">
                                 <label>Rate your MongoDB knowledge</label>
@@ -290,10 +364,10 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="form-group">
-                        <label for="internshipType">Preferred Internship Type *</label>
+                        <label for="internshipType">Preferred Internship Type <span class="important">*</span></label>
                         <select class="form-control" id="internshipType" required>
                             <option value="" selected disabled>Choose your preference</option>
                             <option value="remote">Remote</option>
@@ -303,7 +377,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="availability">Availability *</label>
+                        <label for="availability">Availability <span class="important">*</span></label>
                         <select class="form-control" id="availability" required>
                             <option value="" selected disabled>Select your availability</option>
                             <option value="fulltime">Full-time (40 hrs/week)</option>
@@ -313,18 +387,8 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="startDate">Preferred Start Date *</label>
+                        <label for="startDate">Preferred Start Date <span class="important">*</span></label>
                         <input type="date" class="form-control" id="startDate" required>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="toggle-label">
-                            <label class="toggle-switch">
-                                <input type="checkbox" id="relocation">
-                                <span class="toggle-slider"></span>
-                            </label>
-                            Willing to relocate if needed
-                        </div>
                     </div>
                 </div>
 
@@ -362,7 +426,8 @@
                     <h3 class="section-title">Additional Information</h3>
 
                     <div class="form-group">
-                        <label for="motivation">Why are you interested in this internship? *</label>
+                        <label for="motivation">Why are you interested in this internship? <span
+                                class="important">*</span></label>
                         <textarea class="form-control" id="motivation"
                             placeholder="Tell us why you're interested in this internship" required></textarea>
                     </div>
@@ -411,8 +476,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
-    <script src="./script.js"></script>
-    <script src="./app.js"></script>
+    <script src="./script.js?v=566"></script>
+    <script src="./app.js?v=566"></script>
 </body>
 
 </html>

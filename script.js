@@ -1,3 +1,5 @@
+let audio = new Audio("./click_sound.mp3");
+audio.volume = 0.4;
 // Preloader animation
 window.addEventListener("load", function () {
   setTimeout(function () {
@@ -9,6 +11,31 @@ window.addEventListener("load", function () {
   }, 2000); // Show preloader for 2 seconds
 });
 
+document.getElementById("resume").addEventListener("change", function () {
+  const file = this.files[0];
+  if (file && file.size > 5 * 1024 * 1024) {
+    // 5MB in bytes
+    alert("File size should not exceed 5MB.");
+    this.value = ""; // clear the file input
+  }
+});
+document.getElementById("projectFile").addEventListener("change", function () {
+  const maxSize = 1 * 1024 * 1024; // 1MB in bytes
+  const files = this.files;
+  let valid = true;
+
+  for (let i = 0; i < files.length; i++) {
+    if (files[i].size > maxSize) {
+      alert(`"${files[i].name}" exceeds 1MB limit.`);
+      valid = false;
+      break;
+    }
+  }
+
+  if (!valid) {
+    this.value = ""; // Clear all selected files
+  }
+});
 // Initialize GSAP animations
 function initAnimations() {
   // Register ScrollTrigger plugin
@@ -189,52 +216,52 @@ inputs.forEach((input) => {
   });
 });
 
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
+// form.addEventListener("submit", function (e) {
+//   e.preventDefault();
 
-  let isValid = true;
-  inputs.forEach((input) => {
-    if (input.required && !validateInput(input)) {
-      isValid = false;
-    }
-  });
+//   let isValid = true;
+//   inputs.forEach((input) => {
+//     if (input.required && !validateInput(input)) {
+//       isValid = false;
+//     }
+//   });
 
-  if (isValid) {
-    // Show success animation
-    const submitBtn = this.querySelector(".submit-btn");
+//   if (isValid) {
+//     // Show success animation
+//     const submitBtn = this.querySelector(".submit-btn");
 
-    gsap.to(submitBtn, {
-      backgroundColor: "#00b894",
-      scale: 1.05,
-      duration: 0.3,
-      ease: "back.out(1.7)",
-      onComplete: function () {
-        submitBtn.innerHTML =
-          '<i class="fas fa-check"></i> Application Submitted!';
+//     gsap.to(submitBtn, {
+//       backgroundColor: "#00b894",
+//       scale: 1.05,
+//       duration: 0.3,
+//       ease: "back.out(1.7)",
+//       onComplete: function () {
+//         submitBtn.innerHTML =
+//           '<i class="fas fa-check"></i> Application Submitted!';
 
-        gsap.to(submitBtn, {
-          scale: 1,
-          duration: 0.3,
-          ease: "power2.out",
-        });
-      },
-    });
+//         gsap.to(submitBtn, {
+//           scale: 1,
+//           duration: 0.3,
+//           ease: "power2.out",
+//         });
+//       },
+//     });
 
-    // Disable form
-    inputs.forEach((input) => {
-      input.disabled = true;
-    });
+//     // Disable form
+//     inputs.forEach((input) => {
+//       input.disabled = true;
+//     });
 
-    // You would typically send data to server here
-    console.log("Form submitted successfully");
-  } else {
-    // Scroll to first invalid field
-    const firstInvalid = form.querySelector(".is-invalid");
-    if (firstInvalid) {
-      firstInvalid.scrollIntoView({ behavior: "smooth", block: "center" });
-    }
-  }
-});
+//     // You would typically send data to server here
+//     console.log("Form submitted successfully");
+//   } else {
+//     // Scroll to first invalid field
+//     const firstInvalid = form.querySelector(".is-invalid");
+//     if (firstInvalid) {
+//       firstInvalid.scrollIntoView({ behavior: "smooth", block: "center" });
+//     }
+//   }
+// });
 
 function validateInput(input) {
   const value = input.value.trim();
@@ -320,45 +347,45 @@ function validateInput(input) {
 }
 
 // Star rating system
-const starContainers = document.querySelectorAll(".stars");
+// const starContainers = document.querySelectorAll(".stars");
 
-starContainers.forEach((container) => {
-  const stars = container.querySelectorAll(".star");
-  const inputId = container.dataset.ratingFor;
-  const input = document.getElementById(inputId);
+// starContainers.forEach((container) => {
+//   const stars = container.querySelectorAll(".star");
+//   const inputId = container.dataset.ratingFor;
+//   const input = document.getElementById(inputId);
 
-  stars.forEach((star) => {
-    star.addEventListener("click", function () {
-      const value = this.dataset.value;
-      input.value = value;
+//   stars.forEach((star) => {
+//     star.addEventListener("click", function () {
+//       const value = this.dataset.value;
+//       input.value = value;
 
-      // Update star display
-      stars.forEach((s) => {
-        if (s.dataset.value <= value) {
-          s.classList.add("active");
-        } else {
-          s.classList.remove("active");
-        }
-      });
-    });
+//       // Update star display
+//       stars.forEach((s) => {
+//         if (s.dataset.value <= value) {
+//           s.classList.add("active");
+//         } else {
+//           s.classList.remove("active");
+//         }
+//       });
+//     });
 
-    star.addEventListener("mouseover", function () {
-      const value = this.dataset.value;
+//     star.addEventListener("mouseover", function () {
+//       const value = this.dataset.value;
 
-      stars.forEach((s) => {
-        if (s.dataset.value <= value) {
-          s.style.color = "var(--accent-color-secondary)";
-        }
-      });
-    });
+//       stars.forEach((s) => {
+//         if (s.dataset.value <= value) {
+//           s.style.color = "var(--accent-color-secondary)";
+//         }
+//       });
+//     });
 
-    star.addEventListener("mouseout", function () {
-      stars.forEach((s) => {
-        s.style.color = "";
-      });
-    });
-  });
-});
+//     star.addEventListener("mouseout", function () {
+//       stars.forEach((s) => {
+//         s.style.color = "";
+//       });
+//     });
+//   });
+// });
 
 // Range slider
 const rangeSlider = document.getElementById("yearsExperience");
@@ -373,6 +400,7 @@ rangeSlider.addEventListener("input", function () {
   const max = this.max ? parseFloat(this.max) : 100;
   const newVal = ((value - min) * 100) / (max - min);
   rangeValue.style.left = `calc(${newVal}% + (${8 - newVal * 0.15}px))`;
+  audio.play();
 });
 
 // Scroll progress
@@ -397,4 +425,49 @@ document.querySelector(".scroll-to-top").addEventListener("click", function () {
     top: 0,
     behavior: "smooth",
   });
+});
+
+window.addEventListener("click", () => {
+  audio.play();
+});
+
+
+const pillInput = document.getElementById("pillInput");
+const pillWrapper = document.getElementById("pillWrapper");
+const hiddenInput = document.getElementById("otherSkills");
+
+let skills = [];
+
+function createPill(skill) {
+  if (!skill || skills.includes(skill.toLowerCase())) return;
+
+  skills.push(skill.toLowerCase());
+  updateHiddenInput();
+
+  const pill = document.createElement("div");
+  pill.className = "pill";
+  pill.innerHTML = `${skill}<span class="remove">&times;</span>`;
+
+  pill.querySelector(".remove").addEventListener("click", () => {
+    skills = skills.filter((s) => s !== skill.toLowerCase());
+    pillWrapper.removeChild(pill);
+    updateHiddenInput();
+  });
+
+  pillWrapper.insertBefore(pill, pillInput);
+}
+
+function updateHiddenInput() {
+  hiddenInput.value = skills.join(",");
+}
+
+pillInput.addEventListener("keydown", function (e) {
+  if (e.key === "," || e.key === "Enter") {
+    e.preventDefault();
+    const value = pillInput.value.trim().replace(",", "");
+    if (value) {
+      createPill(value);
+      pillInput.value = "";
+    }
+  }
 });

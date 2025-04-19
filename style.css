@@ -99,9 +99,9 @@ body {
 }
 
 .logo {
-    width: 120px;
-    height: 120px;
-    margin-bottom: 1rem;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 0.4rem;
     display: inline-block;
     position: relative;
 }
@@ -112,6 +112,10 @@ body {
     height: 100%;
     border-radius: 50%;
     border: 3px solid var(--accent-color);
+}
+
+.logo-text.text-sm {
+    font-size: 1.3rem;
 }
 
 .logo-text {
@@ -228,7 +232,7 @@ body {
 .checkbox-custom {
     position: relative;
     width: 20px;
-    margin-right: 8px;
+    margin-right: 10px;
     height: 20px;
     border: none;
     transition: all 0.3s ease;
@@ -255,8 +259,8 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 10px;
-    height: 10px;
+    width: 13px;
+    height: 13px;
     background-color: var(--accent-color);
     border-radius: 50%;
 }
@@ -569,7 +573,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
 .range-value {
     position: absolute;
     top: 0;
-    left: 50%;
+    /* left: 50%; */
     transform: translateX(-50%);
     font-size: 0.9rem;
     font-weight: 500;
@@ -717,4 +721,124 @@ input:checked+.toggle-slider:before {
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 50%;
+}
+
+select.form-control option {
+    background-color: var(--bg-dark-secondary) !important;
+}
+
+select.form-control:focus {
+    color: rgb(255, 255, 255) !important;
+}
+
+input.form-control:focus,
+textarea.form-control:focus {
+
+    color: white !important;
+}
+
+.container-me {
+    padding-top: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+button {
+    background-color: var(--accent-color-secondary);
+    color: var(--text-color);
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    display: block;
+    margin: auto;
+}
+
+button:hover {
+    background-color: #0343b9;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-dark-secondary);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #b7dfff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    color: var(--bg-dark);
+    position: relative;
+}
+
+.modal-content p {
+    color: rgb(8, 88, 8);
+}
+
+.success-icon {
+    color: var(--accent-color);
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.submitted-message {
+    background-color: var(--accent-color-secondary);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+    border-left: 5px solid var(--accent-color);
+}
+
+.important {
+    color: var(--accent-color);
+}
+
+.pill-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 5px;
+    min-height: 45px;
+    cursor: text;
+    align-items: center;
+}
+
+.pill-wrapper input {
+    color: white;
+    border: none;
+    outline: none;
+    flex: 1;
+    min-width: 120px;
+    background-color: transparent;
+}
+
+.pill {
+    background-color: var(--accent-color-secondary);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    user-select: none;
+}
+
+.pill .remove {
+    margin-left: 8px;
+    cursor: pointer;
+    font-weight: bold;
 }
